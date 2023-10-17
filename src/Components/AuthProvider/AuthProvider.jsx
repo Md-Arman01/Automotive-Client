@@ -1,5 +1,5 @@
 import {createContext, useState } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged} from "firebase/auth";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
 import auth from '../firebaseConfiq/firebase.confiq'
 import PropTypes from 'prop-types'
 
@@ -9,9 +9,11 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
 
-    console.log(user)
     const createUser =  (email, password)=> {
         return createUserWithEmailAndPassword(auth, email, password)
+    }
+    const loginUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
 
@@ -31,6 +33,7 @@ const AuthProvider = ({children}) => {
         user,
         setUser,
         createUser,
+        loginUser,
     }
 
     
