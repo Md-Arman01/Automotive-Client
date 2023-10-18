@@ -16,6 +16,27 @@ const Banner = () => {
         </div>
         </div>
       </div>
+      <div className="bg-[#F8F8F8] py-5">
+        <div className="container mx-auto flex justify-between ">
+        <div>
+        <img className="w-40 h-20" src="https://i.ibb.co/z2mFpXQ/replicate-prediction-wolliyzbqvnguaril6qtvhus4a-removebg-preview.png" alt="" />
+            <h1 className="font-rancho text-xl text-center">Sports Car</h1>
+        </div>
+        <div>
+        <img className="w-24 h-20 mb-1" src="https://i.ibb.co/Tqtyc8W/replicate-prediction-xuirsbzbrahkrlsol5hzjipiq4-removebg-preview.png" alt="" />
+            <h1 className="font-rancho text-xl text-center">Sports Bike</h1>
+        </div>
+        <div>
+        <img className="w-40 h-20" src="https://i.ibb.co/R4vqYkr/replicate-prediction-5xfgy2bbivnzyy6kidfztoes2m-removebg-preview.png" alt="" />
+            <h1 className="font-rancho text-xl text-center">Naked Car</h1>
+        </div>
+        <div>
+        <img className="w-24 h-20 mb-1" src="https://i.ibb.co/Qjc6kQC/replicate-prediction-hgm4ofzbp23nf34y4o2oj5yjvy-removebg-preview.png" alt="" />
+            <h1 className="font-rancho text-xl text-center">Naked Bike</h1>
+        </div>
+
+        </div>
+      </div>
     </div>
   );
 };
