@@ -5,6 +5,7 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import Register from "../Pages/Register/Register";
+import BrandDetails from "../Pages/Home/BrandDetails/BrandDetails";
 
 const Router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const Router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/brandDetails/:id',
+        loader: ({params}) => fetch(`https://assignment-10-server-eight-sigma.vercel.app/brands/${params.id}`),
+        element: <BrandDetails></BrandDetails>
       }
     ]
   },

@@ -1,0 +1,79 @@
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: static;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: 750px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width:576px) {
+
+  .swiper {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+  }
+
+}
+@media screen and (min-width:576px) and (max-width:992px) {
+  .swiper {
+    width: 100%;
+  
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 500px;
+  }
+
+} 
