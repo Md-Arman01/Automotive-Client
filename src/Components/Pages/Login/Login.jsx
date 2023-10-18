@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { BsGoogle } from 'react-icons/bs';
+import { BiLogoGithub } from 'react-icons/bi';
 
 const Login = () => {
   const [loginError, setLoginError] = useState('')
-  const {loginUser} = useContext(AuthContext)
+  const {loginUser, loginWithGoogle, loginWithGithub} = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const handleLogin = (e)=> {
     e.preventDefault()
@@ -18,13 +21,35 @@ const Login = () => {
     .then((result) => {
       console.log(result.user)
       form.reset()
+      navigate('/')
     })
     .catch((error) => {
       setLoginError(error.code)
       console.log(error.code)
     });
-
+    
   }
+  const handleGoogleLogin = ()=>{
+    loginWithGoogle()
+    .then((result) => {
+      console.log(result.user)
+      navigate('/')
+    }).catch((error) => {
+      setLoginError(error.code)
+      console.log(error.code)
+    });
+  }
+  const handleGithubLogin = ()=>{
+    loginWithGithub()
+    .then((result) => {
+      console.log(result.user)
+      navigate('/')
+    }).catch((error) => {
+      setLoginError(error.code)
+      console.log(error.code)
+    });
+  }
+
 
 
 
@@ -80,7 +105,16 @@ const Login = () => {
           </form>
           <h1 className="text-center font-medium text-lg -my-4">or</h1>
           <div className="flex flex-col space-y-2 px-6 mt-5">
-            
+            <button
+            onClick={handleGoogleLogin}
+            className="btn btn-outline btn-info normal-case">
+            <BsGoogle></BsGoogle>Login With Google
+          </button>
+            <button
+            onClick={handleGithubLogin}
+            className="btn btn-outline normal-case">
+            <BiLogoGithub className="text-lg"></BiLogoGithub>Login With Github
+          </button>
           </div>
           <div className="my-4 flex justify-center items-center gap-1 text-sm font-light leading-normal text-inherit antialiased">
             <p>Dont have an account?</p>

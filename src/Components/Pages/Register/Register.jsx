@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState('')
   const {createUser} = useContext(AuthContext)
+  const navigate = useNavigate()
 
  const handleRegister = (e) => {
   e.preventDefault()
@@ -44,6 +45,7 @@ const Register = () => {
       'success'
     )
     form.reset()
+    navigate('/')
   })
   .catch((error) => {
     setRegisterError(error.code)

@@ -1,9 +1,13 @@
 import {createContext, useState } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
+import {GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
 import auth from '../firebaseConfiq/firebase.confiq'
 import PropTypes from 'prop-types'
 
 export const AuthContext = createContext()
+
+const googleProvider = new GoogleAuthProvider();
+const GithubProvider = new GithubAuthProvider();
+
 
 const AuthProvider = ({children}) => {
 
@@ -15,6 +19,13 @@ const AuthProvider = ({children}) => {
     const loginUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
+    const loginWithGoogle = ()=>  {
+      return signInWithPopup(auth, googleProvider)
+    }
+    const loginWithGithub = ()=>  {
+      return signInWithPopup(auth, GithubProvider)
+    }
+    
 
 
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -34,6 +45,9 @@ const AuthProvider = ({children}) => {
         setUser,
         createUser,
         loginUser,
+        loginWithGoogle,
+        loginWithGithub
+
     }
 
     
