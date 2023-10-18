@@ -1,5 +1,5 @@
 import {createContext, useState } from "react";
-import {GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
+import {GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 import auth from '../firebaseConfiq/firebase.confiq'
 import PropTypes from 'prop-types'
 
@@ -12,6 +12,7 @@ const GithubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
+    console.log(user)
 
     const createUser =  (email, password)=> {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -24,6 +25,9 @@ const AuthProvider = ({children}) => {
     }
     const loginWithGithub = ()=>  {
       return signInWithPopup(auth, GithubProvider)
+    }
+    const logoutUser = ()=> {
+      return signOut(auth)
     }
     
 
@@ -46,7 +50,9 @@ const AuthProvider = ({children}) => {
         createUser,
         loginUser,
         loginWithGoogle,
-        loginWithGithub
+        loginWithGithub,
+        logoutUser,
+        
 
     }
 
