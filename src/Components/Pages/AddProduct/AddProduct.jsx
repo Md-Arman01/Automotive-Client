@@ -23,7 +23,7 @@ const AddProduct = () => {
     };
     console.log(addProduct);
     fetch(
-      "https://assignment-10-server-eight-sigma.vercel.app/products",
+      `http://localhost:5000/products`,
       {
         method: "POST",
         headers: {
@@ -67,6 +67,7 @@ const AddProduct = () => {
           <input
             type="text"
             name="photoURL"
+            required
             placeholder="Enter photoURL"
             className="input input-bordered w-full"
           />
@@ -76,6 +77,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="name"
+                required
                 placeholder="Enter Product name"
                 className="input input-bordered w-full"
               />
@@ -88,7 +90,7 @@ const AddProduct = () => {
                 </option>
                 <option>Toyota</option>
                 <option>Ford</option>
-                <option>BMW</option>
+                <option>Bmw</option>
                 <option>Mercedes-Benz</option>
                 <option>Tesla</option>
                 <option>Honda</option>
@@ -99,6 +101,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="type"
+                required
                 placeholder="Enter Product Type"
                 className="input input-bordered w-full"
               />
@@ -108,6 +111,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="price"
+                required
                 placeholder="Enter Product Price"
                 className="input input-bordered w-full"
               />
@@ -133,6 +137,7 @@ const AddProduct = () => {
               <input
                 type="text"
                 name="description"
+                required
                 placeholder="Enter Product Short Description"
                 className="input input-bordered w-full"
               />

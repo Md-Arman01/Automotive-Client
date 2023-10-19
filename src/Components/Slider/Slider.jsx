@@ -10,8 +10,8 @@ import './slider.css';
 // import required modules
 import {Pagination } from 'swiper/modules';
 
-const Slider = ({brand}) => {
-  const {image_1, image_2, image_3} = brand || {}
+const Slider = ({brands}) => {
+  const {image_1, image_2, image_3} = brands || {}
 
     
     return (
@@ -29,7 +29,7 @@ const Slider = ({brand}) => {
     );
 };
 Slider.propTypes ={
-  brand: PropTypes.object.isRequired,
+  brands: PropTypes.object.isRequired,
 }
 
 export default Slider;
