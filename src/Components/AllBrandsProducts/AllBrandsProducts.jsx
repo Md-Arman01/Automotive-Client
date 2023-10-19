@@ -3,9 +3,9 @@ import Rating from "react-rating";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Link} from "react-router-dom";
 
-const AllBrandsProducts = ({ brandProducts }) => {
+const AllBrandsProducts = ({ product }) => {
   
-  const {_id, photoURL, name, brand, type, price, rating } = brandProducts || {};
+  const {_id, photoURL, name, brand, type, price, rating } = product || {};
 
   return (
     <div>
@@ -60,7 +60,7 @@ const AllBrandsProducts = ({ brandProducts }) => {
 };
 
 AllBrandsProducts.propTypes = {
-  brandProducts: PropTypes.object.isRequired,
+  product: PropTypes.object.isRequired,
 };
 
 export default AllBrandsProducts;
