@@ -1,17 +1,47 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
   const email = user.email;
   const [cards, setCards] = useState([]);
+  console.log(cards)
   useEffect(() => {
     fetch(`https://assignment-10-server-eight-sigma.vercel.app/myCart/${email}`)
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
-  console.log(cards);
 
+  const handleDelete = (id)=>{
+    
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myCart/${id}`,{
+             method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.deletedCount > 0){
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
+      }
+    })
+    
+  }
   return (
     <div className="grid grid-cols-2 gap-5 container mx-auto my-20">
       {cards.map((card) => (
@@ -38,7 +68,7 @@ const MyCart = () => {
 
             <div className="flex  gap-3 mt-10">
               
-              <button className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1 px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <button onClick={()=> handleDelete(card._id)} className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1 px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 Delete
               </button>
               
