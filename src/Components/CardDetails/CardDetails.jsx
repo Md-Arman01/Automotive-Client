@@ -19,9 +19,9 @@ const CardDetails = () => {
     
   
     return (
-        <div>
-            <div className="relative flex w-full flex-row rounded-xl gap-10 bg-white bg-clip-border text-gray-700 shadow-md">
-        <div className="relative w-3/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
+        <div className="container mx-auto flex items-center h-screen">
+            <div className="relative flex w-full h-[600px] flex-row rounded-xl gap-10 bg-white bg-clip-border text-gray-700 shadow-md">
+        <div className="relative w-3/5 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
           <img
             src={photoURL}
             alt="image"
@@ -34,9 +34,12 @@ const CardDetails = () => {
               <h6 className="mb-3 text-5xl font-rancho bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
                 {name} <span className="text-base">({brand})</span>
               </h6>
-              <h4 className="text-base font-semibold">Description: {description}</h4>
+              <h4 className="text-base font-semibold pr-12">{description}</h4>
               
             </div>
+              <button className=" mt-10 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1  px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                Add To Card
+              </button>
 
           </div>
         </div>

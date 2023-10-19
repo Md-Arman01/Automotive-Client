@@ -23,7 +23,7 @@ const AddProduct = () => {
     };
     console.log(addProduct);
     fetch(
-      `http://localhost:5000/products`,
+      `https://assignment-10-server-eight-sigma.vercel.app/products`,
       {
         method: "POST",
         headers: {

@@ -8,6 +8,7 @@ import Register from "../Pages/Register/Register";
 import BrandDetails from "../Pages/Home/BrandDetails/BrandDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CardDetails from "../CardDetails/CardDetails";
+import CardUpdate from "../CardUpdate/CardUpdate";
 
 const Router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const Router = createBrowserRouter([
       {
         path: '/cardDetails/:_id',
         element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
+      },
+      {
+        path: '/cardUpdate/:_id',
+        element: <PrivateRoute><CardUpdate></CardUpdate></PrivateRoute>
       },
       {
         path: '/brandDetails/:id',
