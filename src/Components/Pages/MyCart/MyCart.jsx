@@ -4,9 +4,8 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
-  const email = user.email;
   const [cards, setCards] = useState([]);
-  console.log(cards)
+  const email = user.email;
   useEffect(() => {
     fetch(`https://assignment-10-server-eight-sigma.vercel.app/myCart/${email}`)
       .then((res) => res.json())
@@ -25,15 +24,17 @@ const MyCart = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myCart/${id}`,{
+        fetch(`https://assignment-10-server-eight-sigma.vercel.app/myCart/${id}`,{
              method: "DELETE"
         })
         .then(res => res.json())
         .then(data => {
           if(data.deletedCount > 0){
+            const remainingCard  = cards.filter(card => card._id !== id) 
+            setCards(remainingCard)
             Swal.fire(
               'Deleted!',
-              'Your file has been deleted.',
+              'Your card has been deleted.',
               'success'
             )
           }
