@@ -1,6 +1,9 @@
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+
+
 
 
 const CardUpdate = () => {
@@ -14,7 +17,7 @@ const CardUpdate = () => {
     },[])
     // console.log(cards)
     const findCard = cards.find(card => card._id === _id)
-    const {photoURL, name, brand, type, price, rating} = findCard || {}
+    const {photoURL, name, type, price, } = findCard || {}
 
     const handleUpdateProduct = (e) => {
         e.preventDefault();
@@ -95,7 +98,7 @@ const CardUpdate = () => {
                 </div>
                 <div>
                   <h1 className="text-lg font-medium mb-2">Brand Name</h1>
-                  <select name="brand" defaultValue={brand} className="select select-bordered w-full">
+                  <select name="brand" className="select select-bordered w-full">
                     <option disabled selected>
                     Choice Brand Name?
                     </option>
@@ -132,7 +135,7 @@ const CardUpdate = () => {
               </div>
               <div>
                   <h1 className=" text-lg font-medium mb-2">Rating</h1>
-                  <select name="rating" defaultValue={rating} className="select select-bordered w-full">
+                  <select name="rating" className="select select-bordered w-full">
                     <option disabled selected>
                     Choice Rating?
                     </option>

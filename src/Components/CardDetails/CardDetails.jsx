@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 
 const CardDetails = () => {
-
+    const {user} = useContext(AuthContext)
     const [cards, setCards] = useState([]);
     const {_id} = useParams()
 
@@ -15,7 +17,34 @@ const CardDetails = () => {
     },[])
     // console.log(cards)
     const findCard = cards.find(card => card._id === _id)
-    const {photoURL, name, brand, description} = findCard || {}
+    const {photoURL, name, brand, price,  description} = findCard || {}
+
+
+    const handleMyCart = ()=> {
+      const myCart = {photoURL, name, brand, price, email: user.email}
+      fetch(
+        `https://assignment-10-server-eight-sigma.vercel.app/myCart`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(myCart),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            Swal.fire({
+              title: "Success!",
+              text: "Cart added successfully",
+              icon: "success",
+              confirmButtonText: "ok",
+            });
+          }
+        });
+    }
     
   
     return (
@@ -37,7 +66,7 @@ const CardDetails = () => {
               <h4 className="text-base font-semibold pr-12">{description}</h4>
               
             </div>
-              <button className=" mt-10 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1  px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <button onClick={handleMyCart} className=" mt-10 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1  px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 Add To Card
               </button>
 

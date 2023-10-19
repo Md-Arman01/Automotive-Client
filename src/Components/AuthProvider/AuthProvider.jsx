@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   GithubAuthProvider,
@@ -42,16 +42,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const unSubscribe = onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setLoading(false);
-      setUser(user);
-    } else {
-      return () => {
-        unSubscribe();
-      };
+  useEffect(()=>{
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setLoading(false)
+        setUser(currentUser)
+    })
+    return ()=>{
+        unSubscribe()
     }
-  });
+
+},[])
 
   const authInfo = {
     user,
