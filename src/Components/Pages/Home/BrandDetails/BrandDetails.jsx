@@ -12,22 +12,31 @@ const BrandDetails = () => {
     const [products, setProducts] = useState([]);
 
       useEffect(()=> {
-        fetch(`http://localhost:5000/products/${brand_name}`)
+        fetch(`https://assignment-10-server-eight-sigma.vercel.app/products/${brand_name}`)
         .then(res => res.json())
         .then(res => setProducts(res))
     },[])
-    
+    console.log(products)
   
 
 
     return (
         <div>
-            <Slider brands={brands}></Slider>
-            <div className="grid grid-cols-2 gap-5 container mx-auto my-10">
+            {
+              products.length > 0 ?
+              <div>
+              <Slider brands={brands}></Slider>
+              <div className="grid grid-cols-2 gap-5 container mx-auto my-10">
             {
               products.map(product => <AllBrandsProducts key={product._id} product={product}></AllBrandsProducts>)
             }
             </div>
+              </div>
+            :
+            <h1>No Product Found</h1>
+
+
+            }
         </div>
     );
 };

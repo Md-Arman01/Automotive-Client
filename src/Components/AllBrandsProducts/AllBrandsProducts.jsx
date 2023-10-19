@@ -4,6 +4,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Link} from "react-router-dom";
 
 const AllBrandsProducts = ({ product }) => {
+
   
   const {_id, photoURL, name, brand, type, price, rating } = product || {};
 

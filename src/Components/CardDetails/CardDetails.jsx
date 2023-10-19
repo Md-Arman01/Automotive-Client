@@ -15,9 +15,9 @@ const CardDetails = () => {
         .then(res => res.json())
         .then(res => setCards(res))
     },[])
-    // console.log(cards)
     const findCard = cards.find(card => card._id === _id)
     const {photoURL, name, brand, price,  description} = findCard || {}
+    
 
 
     const handleMyCart = ()=> {
