@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import Register from "../Pages/Register/Register";
 import BrandDetails from "../Pages/Home/BrandDetails/BrandDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CardDetails from "../CardDetails/CardDetails";
 
 const Router = createBrowserRouter([
   {
@@ -18,7 +20,7 @@ const Router = createBrowserRouter([
       },
       {
         path: '/addProduct',
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path: '/myCart',
@@ -31,6 +33,10 @@ const Router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/cardDetails/:_id',
+        element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
       },
       {
         path: '/brandDetails/:id',

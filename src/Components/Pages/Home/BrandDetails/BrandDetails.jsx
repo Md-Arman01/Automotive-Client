@@ -17,7 +17,7 @@ const BrandDetails = () => {
         .then(res => setProducts(res))
     },[])
     const allBrandProducts = products.filter(product => product.brand === brand_name)
-    console.log(brand_name, allBrandProducts)
+    // console.log(brand_name, allBrandProducts)
 
 
 

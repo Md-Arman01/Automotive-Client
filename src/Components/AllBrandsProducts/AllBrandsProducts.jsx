@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import Rating from "react-rating";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { Link} from "react-router-dom";
 
 const AllBrandsProducts = ({ brandProducts }) => {
-  const { photoURL, name, brand, type, price, rating } = brandProducts || {};
+  
+  const {_id, photoURL, name, brand, type, price, rating } = brandProducts || {};
 
   return (
     <div>
@@ -39,12 +41,16 @@ const AllBrandsProducts = ({ brandProducts }) => {
             </div>
 
             <div className="flex  gap-3 mt-10">
-              <button className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1  px-6 text-center align-middle  text-xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              <Link to={`/cardDetails/${_id}`}>
+              <button className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1  px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 Details
               </button>
+              </Link>
+              <Link>
               <button className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg py-1 px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                 Update
               </button>
+              </Link>
             </div>
           </div>
         </div>

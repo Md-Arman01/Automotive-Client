@@ -88,12 +88,12 @@ const AddProduct = () => {
                 <option disabled selected>
                 Choice Brand Name?
                 </option>
-                <option>Toyota</option>
                 <option>Ford</option>
                 <option>Bmw</option>
                 <option>Mercedes-Benz</option>
                 <option>Tesla</option>
                 <option>Honda</option>
+                <option>Toyota</option>
               </select>
             </div>
             <div>
