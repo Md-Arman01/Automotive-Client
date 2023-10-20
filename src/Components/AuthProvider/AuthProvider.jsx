@@ -41,6 +41,9 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  const scroll = ()=> {
+    window.scroll(0, 0)
+  }
 
   useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -62,6 +65,7 @@ const AuthProvider = ({ children }) => {
     loginWithGithub,
     logoutUser,
     loading,
+    scroll,
   };
 
   return (

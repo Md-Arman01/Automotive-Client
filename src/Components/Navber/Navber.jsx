@@ -37,7 +37,7 @@ const Navber = () => {
             </div>
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-5">
               <div className="flex flex-col-reverse md:flex-row items-center gap-1 md:gap-5">
-              <h1 className=" text-lg font-medium bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
+              <h1 className=" text-lg font-semibold bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
                 {user && user.displayName}
               </h1>
 
@@ -50,7 +50,7 @@ const Navber = () => {
               {user ? (
                 <button
                   onClick={handleLogout}
-                  className="block select-none rounded-lg bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-3 px-5 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  className="block select-none rounded-lg hover:translate-y-1 hover:transition-transform bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-3 px-5 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                   type="button"
                   data-ripple-light="true">
                   Log out
@@ -58,7 +58,7 @@ const Navber = () => {
               ) : (
                 <Link to="/login">
                   <button
-                    className="block  select-none rounded-lg bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-3 px-10 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    className="block  select-none rounded-lg hover:translate-y-1 hover:transition-transform bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-3 px-10 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     type="button"
                     data-ripple-light="true">
                     Login

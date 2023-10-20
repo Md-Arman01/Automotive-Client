@@ -2,18 +2,26 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Footer from "../Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 
 const CardDetails = () => {
-    const {user} = useContext(AuthContext)
+    const {user, scroll} = useContext(AuthContext)
     const [cards, setCards] = useState([]);
     const {_id} = useParams()
 
       useEffect(()=> {
         fetch('https://assignment-10-server-eight-sigma.vercel.app/products')
         .then(res => res.json())
-        .then(res => setCards(res))
+        .then(res =>{
+          setCards(res)
+          // scroll()
+        })
     },[])
     const findCard = cards.find(card => card._id === _id)
     const {photoURL, name, brand, price,  description} = findCard || {}
@@ -48,7 +56,13 @@ const CardDetails = () => {
     
   
     return (
-        <div className="container mx-auto flex items-center h-screen">
+      <>
+        <div
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="500"
+         className="container mx-auto flex items-center h-screen overflow-x-clip">
             <div className="relative flex w-full h-[600px] flex-row rounded-xl gap-10 bg-white bg-clip-border text-gray-700 shadow-md">
         <div className="relative w-3/5 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
           <img
@@ -74,6 +88,8 @@ const CardDetails = () => {
         </div>
       </div>
         </div>
+        <Footer></Footer>
+      </>
     );
 };
 

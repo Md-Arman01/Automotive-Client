@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import BrandCard from "../BrandCard/BrandCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 const Brand = () => {
@@ -11,10 +15,27 @@ const Brand = () => {
     },[])
     return (
         <div className="my-16">
-            <div className="mb-10">
+            <div
+            data-aos="fade-down"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+             className="mb-10">
             <h1 className="font-rancho text-5xl font-semibold text-center bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Our Brand Collections</h1>
+            <div className="flex items-center justify-center my-5 gap-5 ">
+                <p className="w-[200px] border border-red-300"></p>
+                <img className="w-24" src="https://i.ibb.co/hcNZ5SP/replicate-prediction-ph7o7xjbjcnlexajd3htbk36oe-removebg-preview.png" alt="" />
+                <p className="w-[200px] border border-red-300"></p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto">
+            </div>
+            <div
+            data-aos="zoom-out-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto overflow-x-clip">
             {
                 brands?.map(brand => <BrandCard key={brand._id} brand={brand}></BrandCard>)
             }

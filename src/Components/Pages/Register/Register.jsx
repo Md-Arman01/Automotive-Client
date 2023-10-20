@@ -4,6 +4,11 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebaseConfiq/firebase.confiq";
+import Footer from "../../Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Register = () => {
   const [registerError, setRegisterError] = useState('')
@@ -69,7 +74,12 @@ const Register = () => {
 
   return (
     <div>
-      <div className=" flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0">
+      <div
+      data-aos="zoom-in"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="500"
+       className=" flex justify-center my-14 md:my-20 lg:my-40 px-5 md:px-0 overflow-x-clip">
         <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] bg-clip-border text-white shadow-lg shadow-[#fa6d63]/40">
             <h3 className="block font-rancho text-2xl md:text-4xl leading-snug tracking-normal text-white antialiased">
@@ -164,7 +174,7 @@ const Register = () => {
             </div>
             <div className="p-6 pt-0">
               <button
-                className="block w-full select-none rounded-lg bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-2 px-6 text-center align-middle font-rancho text-sm font-medium uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="block w-full select-none rounded-lg hover:translate-y-1 hover:transition-transform bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-3 px-6 text-center align-middle font-rancho text-sm font-medium uppercase text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="submit"
                 data-ripple-light="true">
                 Register
@@ -181,6 +191,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

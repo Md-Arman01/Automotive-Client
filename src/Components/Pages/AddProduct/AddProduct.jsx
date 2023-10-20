@@ -1,5 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const AddProduct = () => {
   const handleAddProduct = (e) => {
@@ -48,10 +53,16 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="container mx-auto mt-16">
-      <div className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md">
+    <>
+    <div className="container mx-auto my-16">
+      <div
+      data-aos="zoom-in"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="500"
+       className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md overflow-x-hidden">
         <div>
-          <h1 className="text-[#3D506E] text-4xl text-center font-rancho font-semibold mb-3">
+          <h1 className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text text-5xl text-center font-rancho font-semibold mb-3">
             Add Product
           </h1>
           <p className="text-center mx-auto w-[900px] text-[#969494]">
@@ -104,7 +115,7 @@ const AddProduct = () => {
                 required
                 placeholder="Enter Product Type"
                 className="input input-bordered w-full"
-              />
+                />
             </div>
             <div>
               <h1 className="text-lg font-medium mb-2">Price</h1>
@@ -148,10 +159,12 @@ const AddProduct = () => {
             className="w-full mt-7 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent text-white font-rancho mx-auto normal-case block select-none rounded-lg  py-3 px-6 text-center align-middle  text-2xl shadow-md shadow-[#FFA828]/20 transition-all hover:shadow-lg hover:cursor-pointer hover:shadow-[#FFA828]/40 active:opacity-[0.85] hover:translate-y-1 hover:transition-transform disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="submit"
             value="Add Product"
-          />
+            />
         </form>
       </div>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

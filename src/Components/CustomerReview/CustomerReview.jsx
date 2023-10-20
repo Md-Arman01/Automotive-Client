@@ -3,9 +3,11 @@
 import Marquee from "react-fast-marquee";
 import MarqueeCard from "../MarqueeCard/MarqueeCard";
 
+
+
 const CustomerReview = () => {
   return (
-    <div>
+    <div className="my-20">
       <h1 className="text-center font-rancho text-5xl font-semibold bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
         CUSTOMERS REVIEWS
       </h1>

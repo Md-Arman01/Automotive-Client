@@ -3,6 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { BsGoogle } from 'react-icons/bs';
 import { BiLogoGithub } from 'react-icons/bi';
+import Footer from "../../Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Login = () => {
   const [loginError, setLoginError] = useState('')
@@ -55,7 +60,12 @@ const Login = () => {
 
   return (
     <div>
-      <div className="flex justify-center mt-14 md:mt-20 lg:mt-28 px-5 md:px-0">
+      <div
+      data-aos="zoom-in"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="500"
+       className="flex justify-center my-14 md:my-30 lg:my-40 px-5 md:px-0 overflow-x-clip">
         <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] bg-clip-border text-white shadow-lg shadow-[#fa6d63]/40">
             <h3 className="block font-rancho text-2xl md:text-4xl  leading-snug tracking-normal text-white antialiased">
@@ -96,7 +106,7 @@ const Login = () => {
             </div>
             <div className="p-6 pt-0">
               <button
-                className="normal-case block w-full font-rancho  select-none rounded-lg bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-2 px-6 text-center align-middle text-lg text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="normal-case block w-full font-rancho  select-none rounded-lg hover:translate-y-1 hover:transition-transform bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] py-2 px-6 text-center align-middle text-lg text-white shadow-md shadow-[#fa6d63]/20 transition-all hover:shadow-lg hover:shadow-[#fa6d63]/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="submit"
                 data-ripple-light="true">
                 Login
@@ -126,6 +136,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
