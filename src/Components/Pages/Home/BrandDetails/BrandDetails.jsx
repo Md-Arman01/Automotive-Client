@@ -25,7 +25,7 @@ const BrandDetails = () => {
         .then(res => res.json())
         .then(res => {
           setProducts(res)
-          scroll()
+          // scroll()
         })
     },[])
     console.log(products)
@@ -52,14 +52,9 @@ const BrandDetails = () => {
               data-aos-delay="50"
               data-aos-duration="500"
                className="my-14 overflow-x-clip">
-            <h1 className="font-rancho text-5xl font-semibold text-center bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Our Product Collections</h1>
+            <h1 className="font-rancho text-3xl md:text-4xl lg:text-5xl font-semibold text-center bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Our Product Collections</h1>
             </div>
-              <div
-               data-aos="zoom-out-up"
-               data-aos-offset="200"
-               data-aos-delay="50"
-               data-aos-duration="500"
-               className="grid grid-cols-2 gap-5 container mx-auto my-10 overflow-x-clip">
+              <div className="grid  lg:grid-cols-2 gap-5 container mx-auto my-5 lg:my-10 px-5 lg:px-0">
             {
               products.map(product => <AllBrandsProducts key={product._id} product={product}></AllBrandsProducts>)
             }
@@ -67,8 +62,8 @@ const BrandDetails = () => {
               </div>
             :
             <div className="flex flex-col items-center justify-center h-screen gap-5">
-              <h1 className="font-rancho text-6xl">Product Not Found</h1>
-              <ImCancelCircle className="text-5xl"></ImCancelCircle>
+              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl">Product Not Found</h1>
+              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl"></ImCancelCircle>
             </div>
             }
             <Footer></Footer>

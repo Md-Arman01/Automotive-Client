@@ -54,7 +54,7 @@ const AddProduct = () => {
 
   return (
     <>
-    <div className="container mx-auto my-16">
+    <div className="container mx-auto my-10 lg:my-16 px-5 lg:px-0">
       <div
       data-aos="zoom-in"
       data-aos-offset="200"
@@ -62,10 +62,10 @@ const AddProduct = () => {
       data-aos-duration="500"
        className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md overflow-x-hidden">
         <div>
-          <h1 className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text text-5xl text-center font-rancho font-semibold mb-3">
+          <h1 className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">
             Add Product
           </h1>
-          <p className="text-center mx-auto w-[900px] text-[#969494]">
+          <p className="text-center mx-auto  lg:w-[900px] text-[#969494]">
             However, I'll need more information about the specific product you
             have in mind. Please provide details about the product, its
             category, and any unique features or benefits you'd like to

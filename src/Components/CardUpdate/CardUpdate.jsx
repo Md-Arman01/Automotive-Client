@@ -73,7 +73,7 @@ const CardUpdate = () => {
     
       return (
         <>
-        <div className="container mx-auto my-16">
+        <div className="container mx-auto my-7 lg:my-16 px-5 lg:px-0">
           <div
           data-aos="zoom-in"
           data-aos-offset="200"
@@ -81,10 +81,10 @@ const CardUpdate = () => {
           data-aos-duration="500"
            className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md overflow-x-clip">
             <div>
-              <h1 className="text-[#3D506E] text-4xl text-center font-rancho font-semibold mb-3">
+              <h1 className="text-[#3D506E] text-3xl lg:text-4xl text-center font-rancho font-semibold mb-3 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
                 Update Product
               </h1>
-              <p className="text-center mx-auto w-[900px] text-[#969494]">
+              <p className="text-center mx-auto lg:w-[900px] text-[#969494]">
               A product update is a modification or enhancement made to an existing product, often with the goal of improving its features, performance, or user experience.
               </p>
             </div>
