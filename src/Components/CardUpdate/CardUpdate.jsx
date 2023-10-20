@@ -19,7 +19,7 @@ const CardUpdate = () => {
         .then(res => res.json())
         .then(res =>
           {
-            // scroll()
+            scroll()
             setCards(res)
 
           })

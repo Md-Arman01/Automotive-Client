@@ -24,8 +24,8 @@ const BrandDetails = () => {
         fetch(`https://assignment-10-server-eight-sigma.vercel.app/products/${brand_name}`)
         .then(res => res.json())
         .then(res => {
+          scroll()
           setProducts(res)
-          // scroll()
         })
     },[])
     console.log(products)

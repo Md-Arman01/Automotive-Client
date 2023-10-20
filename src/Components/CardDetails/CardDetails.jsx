@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Footer from "../Footer/Footer";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+// // ..
+// AOS.init();
 
 
 
@@ -19,8 +19,8 @@ const CardDetails = () => {
         fetch('https://assignment-10-server-eight-sigma.vercel.app/products')
         .then(res => res.json())
         .then(res =>{
+          scroll()
           setCards(res)
-          // scroll()
         })
     },[])
     const findCard = cards.find(card => card._id === _id)

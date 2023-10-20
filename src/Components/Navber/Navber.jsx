@@ -9,6 +9,8 @@ const Navber = () => {
     const menuItem = <MenuItem></MenuItem>
     const {user, setUser, logoutUser} = useContext(AuthContext)
 
+    
+
     const handleLogout = ()=> {
       logoutUser()
       .then(() => {
