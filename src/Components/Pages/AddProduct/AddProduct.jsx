@@ -46,7 +46,7 @@ const AddProduct = () => {
             title: "Success!",
             text: "Added new product successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Ok",
           });
         }
       });
@@ -65,7 +65,7 @@ const AddProduct = () => {
           <h1 className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">
             Add Product
           </h1>
-          <p className="text-center mx-auto  lg:w-[900px] text-[#969494]">
+          <p className="text-center mx-auto  lg:w-[900px] text-[#969494] mb-2 lg:mb-2">
             However, I'll need more information about the specific product you
             have in mind. Please provide details about the product, its
             category, and any unique features or benefits you'd like to
