@@ -74,7 +74,7 @@ const AddProduct = () => {
         </div>
 
         <form onSubmit={handleAddProduct}>
-          <h1 className="text-lg font-medium mb-2">PhotoURL</h1>
+          <h1 className="md:text-lg font-medium mb-2">PhotoURL</h1>
           <input
             type="text"
             name="photoURL"
@@ -84,7 +84,7 @@ const AddProduct = () => {
           />
           <div className="grid grid-cols-2 gap-5 my-5">
             <div>
-              <h1 className="text-lg font-medium mb-2">Name</h1>
+              <h1 className="md:text-lg font-medium mb-2">Name</h1>
               <input
                 type="text"
                 name="name"
@@ -94,7 +94,7 @@ const AddProduct = () => {
               />
             </div>
             <div>
-              <h1 className="text-lg font-medium mb-2">Brand Name</h1>
+              <h1 className="md:text-lg font-medium mb-2">Brand Name</h1>
               <select name="brand" className="select select-bordered w-full">
                 <option disabled selected>
                 Choice Brand Name?
@@ -108,7 +108,7 @@ const AddProduct = () => {
               </select>
             </div>
             <div>
-              <h1 className="text-lg font-medium mb-2">Type</h1>
+              <h1 className="md:text-lg font-medium mb-2">Type</h1>
               <input
                 type="text"
                 name="type"
@@ -118,7 +118,7 @@ const AddProduct = () => {
                 />
             </div>
             <div>
-              <h1 className="text-lg font-medium mb-2">Price</h1>
+              <h1 className="md:text-lg font-medium mb-2">Price</h1>
               <input
                 type="text"
                 name="price"
@@ -128,7 +128,7 @@ const AddProduct = () => {
               />
             </div>
             <div>
-              <h1 className="text-lg font-medium mb-2">Rating</h1>
+              <h1 className="md:text-lg font-medium mb-2">Rating</h1>
               <select name="rating" className="select select-bordered w-full">
                 <option disabled selected>
                 Choice Rating?
@@ -144,7 +144,7 @@ const AddProduct = () => {
               </select>
             </div>
             <div>
-              <h1 className="text-lg font-medium mb-2">Description</h1>
+              <h1 className="md:text-lg font-medium mb-2">Description</h1>
               <input
                 type="text"
                 name="description"

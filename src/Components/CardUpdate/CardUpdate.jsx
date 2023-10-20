@@ -84,13 +84,13 @@ const CardUpdate = () => {
               <h1 className="text-[#3D506E] text-3xl lg:text-4xl text-center font-rancho font-semibold mb-3 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
                 Update Product
               </h1>
-              <p className="text-center mx-auto lg:w-[900px] text-[#969494]">
+              <p className="text-center mx-auto lg:w-[900px] text-[#969494] mb-3 lg:mb-0">
               A product update is a modification or enhancement made to an existing product, often with the goal of improving its features, performance, or user experience.
               </p>
             </div>
     
             <form onSubmit={handleUpdateProduct}>
-              <h1 className="text-lg font-medium mb-2">PhotoURL</h1>
+              <h1 className="md:text-lg font-medium mb-2">PhotoURL</h1>
               <input
                 type="text"
                 name="photoURL"
@@ -101,7 +101,7 @@ const CardUpdate = () => {
                 />
               <div className="grid grid-cols-2 gap-5 my-5">
                 <div>
-                  <h1 className="text-lg font-medium mb-2">Name</h1>
+                  <h1 className="md:text-lg font-medium mb-2">Name</h1>
                   <input
                     type="text"
                     name="name"
@@ -112,7 +112,7 @@ const CardUpdate = () => {
                     />
                 </div>
                 <div>
-                  <h1 className="text-lg font-medium mb-2">Brand Name</h1>
+                  <h1 className="md:text-lg font-medium mb-2">Brand Name</h1>
                   <select name="brand" className="select select-bordered w-full">
                     <option disabled selected>
                     Choice Brand Name?
@@ -126,7 +126,7 @@ const CardUpdate = () => {
                   </select>
                 </div>
                 <div>
-                  <h1 className="text-lg font-medium mb-2">Type</h1>
+                  <h1 className="md:text-lg font-medium mb-2">Type</h1>
                   <input
                     type="text"
                     name="type"
@@ -137,7 +137,7 @@ const CardUpdate = () => {
                   />
                 </div>
                 <div>
-                  <h1 className="text-lg font-medium mb-2">Price</h1>
+                  <h1 className="md:text-lg font-medium mb-2">Price</h1>
                   <input
                     type="text"
                     name="price"
@@ -149,7 +149,7 @@ const CardUpdate = () => {
                 </div>
               </div>
               <div>
-                  <h1 className=" text-lg font-medium mb-2">Rating</h1>
+                  <h1 className=" md:text-lg font-medium mb-2">Rating</h1>
                   <select name="rating" className="select select-bordered w-full">
                     <option disabled selected>
                     Choice Rating?

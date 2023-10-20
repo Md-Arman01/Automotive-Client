@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { BsGoogle } from 'react-icons/bs';
 import { BiLogoGithub } from 'react-icons/bi';
@@ -13,6 +13,7 @@ const Login = () => {
   const [loginError, setLoginError] = useState('')
   const {loginUser, loginWithGoogle, loginWithGithub} = useContext(AuthContext)
   const navigate = useNavigate()
+  const location = useLocation()
 
   const handleLogin = (e)=> {
     e.preventDefault()
@@ -38,7 +39,7 @@ const Login = () => {
     loginWithGoogle()
     .then((result) => {
       console.log(result.user)
-      navigate('/')
+      navigate(location.state? location.state : '/')
     }).catch((error) => {
       setLoginError(error.code)
       console.log(error.code)
