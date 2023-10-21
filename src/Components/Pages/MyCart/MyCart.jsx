@@ -62,7 +62,7 @@ const MyCart = () => {
         cards.length > 0 ?
         <div>
           <h1 className="mt-5 lg:mt-10 text-center font-rancho text-3xl md:text-4xl lg:text-5xl font-semibold bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
-        My Added Carts
+        My Added Carts : {cards.length}
       </h1>
         
         <div className="grid  lg:grid-cols-2 gap-5 container mx-auto my-5 lg:my-20 min-h-screen px-5 lg:px-0 ">
@@ -105,8 +105,8 @@ const MyCart = () => {
         </div>
         :
         <div className="flex flex-col items-center justify-center h-screen gap-5">
-              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl">Cart Not Found</h1>
-              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl"></ImCancelCircle>
+              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Cart Not Found</h1>
+              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl text-[#fa0844cc]"></ImCancelCircle>
             </div>
 
       }

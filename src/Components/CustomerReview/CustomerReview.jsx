@@ -11,7 +11,7 @@ const CustomerReview = () => {
       <h1 className="text-center font-rancho text-3xl md:text-4xl lg:text-5xl font-semibold bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
         CUSTOMERS REVIEWS
       </h1>
-      <p className="text-center mt-2 lg:mt-5 text-[10px] lg:text-xs">
+      <p className="text-center mt-2 lg:mt-5 text-[10px] lg:text-xs text-gray-500">
         Thank you : If you love our theme, don't forget to rate it
       </p>
       <div className="flex justify-center mt-3">

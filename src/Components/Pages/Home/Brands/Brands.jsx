@@ -24,9 +24,9 @@ const Brand = () => {
              className=" lg:mb-10">
             <h1 className="font-rancho text-3xl md:text-4xl lg:text-5xl font-semibold text-center bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Our Brand Collections</h1>
             <div className="flex items-center justify-center my-5 gap-5 ">
-                <p className="w-[100px] md:w-[150px] lg:w-[200px] border border-red-300"></p>
+                <hr className="w-[100px] md:w-[150px] lg:w-[260px]"></hr>
                 <img className="w-20 md:w-24" src="https://i.ibb.co/hcNZ5SP/replicate-prediction-ph7o7xjbjcnlexajd3htbk36oe-removebg-preview.png" alt="" />
-                <p className="w-[100px] md:w-[150px] lg:w-[200px] border border-red-300"></p>
+                <hr className="w-[100px] md:w-[150px] lg:w-[260px]"></hr>
             </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto px-5 lg:px-0">

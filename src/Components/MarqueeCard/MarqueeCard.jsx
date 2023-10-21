@@ -8,7 +8,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/Ss8PzDH/Pi7-Image-young-happy-man-standing-isolated.jpg" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">CHASEP</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">CHASEP</h1>
                     <p className="text-xs mt-3 text-gray-500">For Other</p>
                 </div>
             </div>
@@ -21,7 +21,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/JCjWr86/Pi7-Image-replicate-prediction-zvcm2ubb4qsltvoeavdvewzqrm.png" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">Hunter Inmam</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">Hunter Inmam</h1>
                     <p className="text-xs mt-3 text-gray-500">For Developer</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/gwwZS6w/Pi7-Image-replicate-prediction-65twwfzb7xlep4qucdz3emsuo4.png" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">Mark Juger Bark</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">Mark Juger Bark</h1>
                     <p className="text-xs mt-3 text-gray-500">For Facebook Owner</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/M2xKqXS/Pi7-Image-man-posing-indoors-climbing-arena.jpg" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">Matt Sandham</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">Matt Sandham</h1>
                     <p className="text-xs mt-3 text-gray-500">Duotool Direct LTD T/A Toolden</p>
                 </div>
             </div>
@@ -60,7 +60,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/hgKWKZ1/Pi7-Image-replicate-prediction-dmjf3gbbgw4l6dk6qjfy462sbe.png" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">Phuong</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">Phuong</h1>
                     <p className="text-xs mt-3 text-gray-500">P.Mai Brand</p>
                 </div>
             </div>
@@ -73,7 +73,7 @@ const MarqueeCard = () => {
                 <img className="w-24 h-24 object-cover rounded-full" src="https://i.ibb.co/xSH8T9k/Pi7-Image-front-view-man-using-sign-language.jpg" alt="" />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-semibold">Stip Jovs</h1>
+                    <h1 className="text-2xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text font-semibold">Stip Jovs</h1>
                     <p className="text-xs mt-3 text-gray-500">For Developer</p>
                 </div>
             </div>

@@ -3,14 +3,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import Footer from "../Footer/Footer";
-import { useContext } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 
 
 const CardUpdate = () => {
-  const {scroll} = useContext(AuthContext)
     const [cards, setCards] = useState([]);
     const {_id} = useParams()
 
@@ -19,14 +16,13 @@ const CardUpdate = () => {
         .then(res => res.json())
         .then(res =>
           {
-            scroll()
             setCards(res)
 
           })
     },[])
     // console.log(cards)
     const findCard = cards.find(card => card._id === _id)
-    const {photoURL, name, type, price, } = findCard || {}
+    const {photoURL, name, type, price, brand, rating } = findCard || {}
 
     const handleUpdateProduct = (e) => {
         e.preventDefault();
@@ -79,7 +75,7 @@ const CardUpdate = () => {
           data-aos-offset="200"
           data-aos-delay="50"
           data-aos-duration="500"
-           className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md overflow-x-clip">
+           className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-5 md:p-12 rounded-md overflow-x-clip">
             <div>
               <h1 className="text-[#3D506E] text-3xl lg:text-4xl text-center font-rancho font-semibold mb-3 bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">
                 Update Product
@@ -97,7 +93,7 @@ const CardUpdate = () => {
                 defaultValue={photoURL}
                 required
                 placeholder="Enter photoURL"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-400"
                 />
               <div className="grid grid-cols-2 gap-5 my-5">
                 <div>
@@ -108,15 +104,13 @@ const CardUpdate = () => {
                     defaultValue={name}
                     required
                     placeholder="Enter Product name"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full text-gray-400"
                     />
                 </div>
                 <div>
                   <h1 className="md:text-lg font-medium mb-2">Brand Name</h1>
-                  <select name="brand" className="select select-bordered w-full">
-                    <option disabled selected>
-                    Choice Brand Name?
-                    </option>
+                  <select name="brand" className="select select-bordered text-gray-400 w-full">
+                    <option>{brand}</option>
                     <option>Ford</option>
                     <option>Bmw</option>
                     <option>Mercedes-Benz</option>
@@ -133,7 +127,7 @@ const CardUpdate = () => {
                     defaultValue={type}
                     required
                     placeholder="Enter Product Type"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full text-gray-400"
                   />
                 </div>
                 <div>
@@ -144,16 +138,14 @@ const CardUpdate = () => {
                     defaultValue={price}
                     required
                     placeholder="Enter Product Price"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full text-gray-400"
                   />
                 </div>
               </div>
               <div>
                   <h1 className=" md:text-lg font-medium mb-2">Rating</h1>
-                  <select name="rating" className="select select-bordered w-full">
-                    <option disabled selected>
-                    Choice Rating?
-                    </option>
+                  <select name="rating" className="select select-bordered text-gray-400 w-full">
+                    <option>{rating}</option>
                     <option>1</option>
                     <option>2</option>
                     <option>2.5</option>

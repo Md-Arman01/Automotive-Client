@@ -1,17 +1,21 @@
 
 const AboutUs = () => {
   return (
-    <div className=" mb-7 lg:mb-20">
-      <div className="lg:flex">
-        <div className="bg-[#393651]">
+    <div className="bg-[#393651]">
+
+    <div className=" container mx-auto ">
+        
+            
+      <div className="md:flex">
+        <div>
           <img
-            className="lg:w-[610px] mx-auto"
+            className="lg:w-[610px] md:mt-36 lg:mt-0"
             src="https://i.ibb.co/BBx6fhf/replicate-prediction-hakusjrbjpqhcarfrxhdidg5cy-removebg-preview.png"
             alt=""
           />
         </div>
         <div
-          className="py-10 md:py-[120px] px-10 md:px-[96px] bg-[#393651] flex-1">
+          className="py-10 md:py-[120px] px-10 md:px-[96px]  flex-1">
           <div>
             <p className="text-white text-lg font-semibold mb-3">
               Automotive
@@ -32,7 +36,9 @@ const AboutUs = () => {
         </div>
       </div>
      
+             
     </div>
+              </div>
   );
 };
 

@@ -60,7 +60,7 @@ const AddProduct = () => {
       data-aos-offset="200"
       data-aos-delay="50"
       data-aos-duration="500"
-       className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-12 rounded-md overflow-x-hidden">
+       className="card flex-1 mb-7 bg-[#fcedf1] border shadow-md p-5 md:p-12 rounded-md overflow-x-hidden">
         <div>
           <h1 className="bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text text-3xl md:text-4xl lg:text-5xl text-center font-rancho font-semibold mb-3">
             Add Product
@@ -95,7 +95,7 @@ const AddProduct = () => {
             </div>
             <div>
               <h1 className="md:text-lg font-medium mb-2">Brand Name</h1>
-              <select name="brand" className="select select-bordered w-full">
+              <select name="brand" className="select select-bordered text-gray-400 w-full">
                 <option disabled selected>
                 Choice Brand Name?
                 </option>
@@ -129,7 +129,7 @@ const AddProduct = () => {
             </div>
             <div>
               <h1 className="md:text-lg font-medium mb-2">Rating</h1>
-              <select name="rating" className="select select-bordered w-full">
+              <select name="rating" className="select select-bordered text-gray-400 w-full">
                 <option disabled selected>
                 Choice Rating?
                 </option>

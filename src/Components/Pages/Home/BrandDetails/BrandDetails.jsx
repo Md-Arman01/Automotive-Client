@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import AllBrandsProducts from "../../../AllBrandsProducts/AllBrandsProducts";
 import { ImCancelCircle } from 'react-icons/im';
 import Footer from "../../../Footer/Footer";
-import { useContext } from "react";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
@@ -15,7 +13,6 @@ AOS.init();
 
 
 const BrandDetails = () => {
-  const {scroll} = useContext(AuthContext)
     const brands = useLoaderData()
     const {brand_name} = brands || {}
     const [products, setProducts] = useState([]);
@@ -24,7 +21,6 @@ const BrandDetails = () => {
         fetch(`https://assignment-10-server-eight-sigma.vercel.app/products/${brand_name}`)
         .then(res => res.json())
         .then(res => {
-          scroll()
           setProducts(res)
         })
     },[])
@@ -62,8 +58,8 @@ const BrandDetails = () => {
               </div>
             :
             <div className="flex flex-col items-center justify-center h-screen gap-5">
-              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl">Product Not Found</h1>
-              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl"></ImCancelCircle>
+              <h1 className="font-rancho text-3xl md:text-4xl lg:text-6xl bg-gradient-to-t from-[#fa0844] to-[#fa6d63] text-transparent bg-clip-text">Product Not Found</h1>
+              <ImCancelCircle className="text-3xl md:text-4xl lg:text-5xl text-[#fa0844cc]"></ImCancelCircle>
             </div>
             }
             <Footer></Footer>
