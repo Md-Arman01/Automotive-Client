@@ -5,18 +5,23 @@ import { ImCancelCircle } from 'react-icons/im';
 import Footer from "../../Footer/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import useAxios from "../../Hooks/useAxios";
 // ..
 AOS.init();
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);
   const [cards, setCards] = useState([]);
-  const email = user.email;
+  const axiosSecure = useAxios()
+  const email = user?.email;
+  
   useEffect(() => {
-    fetch(`https://assignment-10-server-eight-sigma.vercel.app/myCart/${email}`)
-      .then((res) => res.json())
-      .then((data) => setCards(data));
-  }, []);
+    
+    axiosSecure.get(`/myCart/${email}`)
+    .then(res => {
+          setCards(res.data)
+         });
+  }, [axiosSecure]);
 
   const handleDelete = (id)=>{
     

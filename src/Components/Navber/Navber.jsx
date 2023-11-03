@@ -4,6 +4,7 @@ import userLogo from "../../assets/user.png";
 import MenuItem from "./MenuItem";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Navber = () => {
   const menuItem = <MenuItem></MenuItem>;
@@ -35,6 +36,15 @@ const Navber = () => {
       .then(() => {
         setUser(null);
         console.log("Sign-out successful.");
+        const userEmail = { email: user.email };
+        axios.post(
+            "https://assignment-10-server-eight-sigma.vercel.app/logout",
+            userEmail,
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
       })
       .catch((error) => {
         console.log(error.code);

@@ -1,72 +1,85 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { BsGoogle } from 'react-icons/bs';
-import { BiLogoGithub } from 'react-icons/bi';
+import { BsGoogle } from "react-icons/bs";
+import { BiLogoGithub } from "react-icons/bi";
 import Footer from "../../Footer/Footer";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import axios from "axios";
 // ..
 AOS.init();
 
 const Login = () => {
-  const [loginError, setLoginError] = useState('')
-  const {loginUser, loginWithGoogle, loginWithGithub} = useContext(AuthContext)
-  const navigate = useNavigate()
-  const location = useLocation()
+  const [loginError, setLoginError] = useState("");
+  const { loginUser, loginWithGoogle, loginWithGithub } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleLogin = (e)=> {
-    e.preventDefault()
+  const handleLogin = (e) => {
+    e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password)
-    setLoginError('')
+    console.log(email, password);
+    setLoginError("");
 
     loginUser(email, password)
-    .then((result) => {
-      console.log(result.user)
-      form.reset()
-      navigate('/')
-    })
-    .catch((error) => {
-      setLoginError(error.code)
-      console.log(error.code)
-    });
-    
-  }
-  const handleGoogleLogin = ()=>{
+      .then((result) => {
+        console.log(result.user);
+        form.reset();
+        // jst practice
+        const userEmail = { email };
+        axios
+          .post(
+            "https://assignment-10-server-eight-sigma.vercel.app/jwt",
+            userEmail,
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              navigate(location.state ? location.state : "/");
+            }
+          });
+      })
+      .catch((error) => {
+        setLoginError(error.code);
+        console.log(error.code);
+      });
+  };
+  const handleGoogleLogin = () => {
     loginWithGoogle()
-    .then((result) => {
-      console.log(result.user)
-      navigate(location.state? location.state : '/')
-    }).catch((error) => {
-      setLoginError(error.code)
-      console.log(error.code)
-    });
-  }
-  const handleGithubLogin = ()=>{
+      .then((result) => {
+        console.log(result.user);
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((error) => {
+        setLoginError(error.code);
+        console.log(error.code);
+      });
+  };
+  const handleGithubLogin = () => {
     loginWithGithub()
-    .then((result) => {
-      console.log(result.user)
-      navigate('/')
-    }).catch((error) => {
-      setLoginError(error.code)
-      console.log(error.code)
-    });
-  }
-
-
-
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        setLoginError(error.code);
+        console.log(error.code);
+      });
+  };
 
   return (
     <div>
       <div
-      data-aos="zoom-in"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="500"
-       className="flex justify-center my-14 md:my-30 lg:my-40 px-5 md:px-0 overflow-x-clip">
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="500"
+        className="flex justify-center my-14 md:my-30 lg:my-40 px-5 md:px-0 overflow-x-clip">
         <div className="relative flex w-full md:w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative mx-4 -mt-6 mb-4 grid h-20 md:h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#fa6d63] to-[#fa0844] bg-clip-border text-white shadow-lg shadow-[#fa6d63]/40">
             <h3 className="block font-rancho text-2xl md:text-4xl  leading-snug tracking-normal text-white antialiased">
@@ -100,7 +113,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="-ml-2.5">
-              {loginError && (
+                {loginError && (
                   <h1 className="text-red-500 px-5">{loginError}</h1>
                 )}
               </div>
@@ -117,15 +130,15 @@ const Login = () => {
           <h1 className="text-center font-medium text-lg -my-4">or</h1>
           <div className="flex flex-col space-y-2 px-6 mt-5">
             <button
-            onClick={handleGoogleLogin}
-            className="btn btn-outline btn-info normal-case">
-            <BsGoogle></BsGoogle>Login With Google
-          </button>
+              onClick={handleGoogleLogin}
+              className="btn btn-outline btn-info normal-case">
+              <BsGoogle></BsGoogle>Login With Google
+            </button>
             <button
-            onClick={handleGithubLogin}
-            className="btn btn-outline normal-case">
-            <BiLogoGithub className="text-lg"></BiLogoGithub>Login With Github
-          </button>
+              onClick={handleGithubLogin}
+              className="btn btn-outline normal-case">
+              <BiLogoGithub className="text-lg"></BiLogoGithub>Login With Github
+            </button>
           </div>
           <div className="my-4 flex justify-center items-center gap-1 text-sm font-light leading-normal text-inherit antialiased">
             <p>Dont have an account?</p>
